@@ -1,7 +1,7 @@
 import argparse
 import time
 
-import logging
+import logging_srv
 import site_requests
 import sms
 
