@@ -24,4 +24,4 @@ def main(check_url):
         sms(msg_text)
 
 if __name__ == "__main__":
-    main()
+    main(args.url)
