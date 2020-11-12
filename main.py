@@ -20,7 +20,7 @@ def main(check_url):
     server_status = site_requests.check_site(check_url)
 
     if server_status != 200:
-        msg_text = 'status ' + check_url + 'is ' + server_status
+        msg_text = 'status ' + check_url + 'is ' + str(server_status)
         sms(msg_text)
 
 if __name__ == "__main__":
