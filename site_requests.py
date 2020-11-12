@@ -1,6 +1,7 @@
 import requests
 
 def check_site(url):
+
     try:
         response = requests.get(url)
         print('response.url: ' + response.url)
@@ -10,6 +11,9 @@ def check_site(url):
         print('res_HTTPError: ' + str(res_HTTPError))
     except requests.exceptions.ConnectionError as res_ConnectionError:
         print('res_ConnectionError: ' + str(res_ConnectionError))
+    finally:
+        return response.status_code
+
 
 if __name__ == "__main__":
     url = 'https://python101.online'
