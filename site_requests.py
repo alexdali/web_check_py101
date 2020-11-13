@@ -1,16 +1,23 @@
+import log_srv
 import requests
+
+logger = log_srv.get_logger(__name__)
 
 def check_site(url):
 
     try:
         response = requests.get(url)
-        print('response.url: ' + response.url)
-        print('response.status_code: ' + str(response.status_code))
+        logger.info('response.url: ' + response.url)
+        #print('response.url: ' + response.url)
+        #print('response.status_code: ' + str(response.status_code))
+        logger.info('response.status_code: ' + str(response.status_code))
         response.raise_for_status()
     except requests.exceptions.HTTPError as res_HTTPError:
-        print('res_HTTPError: ' + str(res_HTTPError))
+        #print('res_HTTPError: ' + str(res_HTTPError))
+        logger.warning('res_HTTPError: ' + str(res_HTTPError))
     except requests.exceptions.ConnectionError as res_ConnectionError:
-        print('res_ConnectionError: ' + str(res_ConnectionError))
+        #print('res_ConnectionError: ' + str(res_ConnectionError))
+        logger.warning('res_ConnectionError: ' + str(res_ConnectionError))
     finally:
         return response.status_code
 

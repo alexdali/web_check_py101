@@ -1,7 +1,10 @@
+import log_srv
 import os
 
 from twilio.rest import Client
 from dotenv import load_dotenv
+
+logger = log_srv.get_logger(__name__)
 
 def send_sms(msg_text):
     """
@@ -20,6 +23,7 @@ def send_sms(msg_text):
       from_=TWILIO_NUM_PHONE,
       to=VERIFIED_NUM_PHONE
     )
+
 
     return message.sid
 
