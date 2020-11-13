@@ -44,6 +44,7 @@ TO_DO
 <!-- USAGE EXAMPLES -->
 ## Usage
 
+```
 usage: main.py [-h] [-hh hours] [-mm minutes] [-ss seconds] url
 
 positional arguments:
@@ -54,7 +55,7 @@ optional arguments:
   -hh hours    period in hours to repeat the script run, default=0
   -mm minutes  period in minutes to repeat the script run, default=0
   -ss seconds  period in seconds to repeat the script run, default is 60
-
+```
 
 <!-- ROADMAP -->
 ## Roadmap
